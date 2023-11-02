@@ -12,11 +12,29 @@ public class AddEventCommand extends EventCommand {
     public void execute(Scanner scanner, EventList eventList) {
         System.out.print("What's the event?: ");
         String eventName = scanner.nextLine();
-        System.out.print("When does it start? (yyyy-mm-ddThh:mm:ss) (eg. 2023-12-20T12:30:30): ");
-        LocalDateTime startTime = LocalDateTime.parse(scanner.nextLine());
-        System.out.print("When does it end? (yyyy-mm-ddThh:mm:ss) (eg. 2023-12-20T12:30:30): ");
-        LocalDateTime endTime = LocalDateTime.parse(scanner.nextLine());
+        LocalDateTime startTime = null;
+        LocalDateTime endTime = null;
 
+        //@@author Cheezeblokz
+        while (startTime == null) {
+            try {
+                System.out.print("When does it start? (yyyy-mm-ddThh:mm:ss) (eg. 2023-12-20T12:30:30): ");
+                startTime = LocalDateTime.parse(scanner.nextLine());
+            } catch (Exception e) {
+                System.out.println("Invalid Date Input!");
+            }
+        }
+
+        while (endTime == null) {
+            try {
+                System.out.print("When does it end? (yyyy-mm-ddThh:mm:ss) (eg. 2023-12-20T12:30:30): ");
+                endTime = LocalDateTime.parse(scanner.nextLine());
+            } catch (Exception e) {
+                System.out.println("Invalid Date Input!");
+            }
+        }
+
+        //@@author Bayasgalan Kherlen
         Event event = new Event(eventName, startTime, endTime);
 
         eventList.addEvent(event);

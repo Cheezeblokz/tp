@@ -15,6 +15,6 @@ public class FindEvent extends EventCommand {
         System.out.println("Here are the matching events in your list:");
         eventList.findEvent(eventName);
 
-        System.out.println("    These events have been found");
+        System.out.println("    These events have been found.");
     }
 }

@@ -41,11 +41,7 @@ public class Event {
 
     @Override
     public String toString() {
-        return "Event{" +
-                "name='" + name + '\'' +
-                ", from=" + from +
-                ", to=" + to +
-                '}';
+        return name + " (from " + from + " to " + to + ")";
     }
 
 }

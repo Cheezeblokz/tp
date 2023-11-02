@@ -33,8 +33,8 @@ public class EventList {
         }
     }
 
-    public void deleteEvent(String name) {
-        eventList.removeIf(event -> event.getName().equals(name));
+    public boolean deleteEvent(String name) {
+        return eventList.removeIf(event -> event.getName().equals(name));
     }
 
     public void deleteAllEvents() {
