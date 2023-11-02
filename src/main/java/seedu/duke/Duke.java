@@ -23,6 +23,8 @@ public class Duke {
         String input;
         boolean shouldTerminate = false;
 
+        System.out.println("Welcome to TaskLinker!");
+
         while (!shouldTerminate) {
             System.out.print("Enter your command: ");
             input = scanner.nextLine();
@@ -52,6 +54,11 @@ public class Duke {
                 "commands: ");
 
         String[] commandFormats = new String[] {
+            "add event",
+            "delete event",
+            "list events",
+            "delete all events",
+            "find event",
             "list flashcards",
             "create flashcard",
             "review flashcards",
